@@ -24,6 +24,11 @@ OPT_ROUNDS = 1000
 VERBOSE_EVAL = 50
 
 
+# XGBoost
+dtrain = xgb.DMatrix(train_df[predictors], train_df[target].values)
+dvalid = xgb.DMatrix(val_df[predictors], val_df[target].values)
+type(dtrain)
+
 # XGBoost Parameters
 params = {}
 #params['objective'] = 'multi:softprob'  #'binary:logistic'
